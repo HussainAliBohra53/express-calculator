@@ -1,0 +1,36 @@
+
+:root{
+    --bg-color:red;
+    --box-border-color:black;
+    --box-bg-color:green;
+}
+
+.add-var-button{
+    width:40px;
+    height :20px;
+    color:white;
+    background-color: darkgreen;
+}
+.app-header{
+    color:#000;
+    
+}
+.app-header-name{
+    transition: transform 2s;
+}
+.app-header-name:hover{
+transform:translateX(20px);
+}
+.body{
+    background-color: white;
+}
+.icon-rotate{
+    transition: transform 1s;
+}
+.icon-rotate:hover{
+    transform: rotate(360deg);
+}
+.theme-box-border{
+    border:5px solid var(--box-border-color);
+    border-radius: 15px 15px 0px 0px;
+}

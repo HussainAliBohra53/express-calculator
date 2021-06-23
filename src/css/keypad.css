@@ -1,0 +1,22 @@
+
+.button-animate{
+    transition: transform 1s;
+}
+.button-animate:hover{
+    transform: scale(1.1);
+}
+#keypad button{
+    transition: transform 1s;  
+}
+#keypad button:hover{
+    transform: translate3d(45deg)
+}
+#keypad{
+    width:100%;
+    background-image: white;
+}
+#keypad button{
+    width: 100%;
+    min-width: 50px;
+    border: 0px;
+}

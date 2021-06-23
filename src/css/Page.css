@@ -1,0 +1,46 @@
+.var-container{
+    display:flex;
+    flex-wrap: wrap;
+}
+.var-value{
+    margin: 5px;
+}
+.newvar-button{
+    margin-right: 0px;
+    float: right;
+    height: 80%;
+    width:50px;
+    font-size: 0.8em;
+}
+.addvar-button{
+    margin-left: 0px;
+    float: left;
+    height: 25px;
+    font-size: 0.8em;
+    background-color: aqua;
+}
+
+.var-value input{
+    min-width: 20px;
+    max-width: 50px;
+}
+.badge{
+    width: fit-content;
+    height: fit-content;
+    background-color: burlywood;
+}
+.varlist{
+    border: 5px solid black;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 100%;
+}
+.varlist-header{
+    border-bottom: 1px solid pink;
+}
+.varlist-list > tbody > tr:nth-child(odd) > td{
+    background-color:hsl(195, 53%, 75%);
+}
+.varlist-list> tbody > tr:nth-child(even) > td {
+    background-color: hsl(195, 53%, 80%);
+ }
