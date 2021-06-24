@@ -41,7 +41,7 @@ export function ModelGetVarName(props){
         }
     }
     return(
-        <>
+        <> 
             <input className="input" value={input} onChange={inputEventHandler} placeholder="Variable Name"/>
             <button className="btn btn-success" {...error.length>0?'disabled':''} onClick={SaveVariableHandler}>Save</button>
             <div className="text-center text-danger">{error}</div>

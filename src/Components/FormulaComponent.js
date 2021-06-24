@@ -52,13 +52,13 @@ return (
 <div className="w-100 dark">
 <table>
     <tr>
-        <td><button className={isExpanded?"bi bi-arrows-expand":"bi bi-arrows-collapse"} onClick={onExpandeChange}></button></td>
+        <td><button className={isExpanded?"bi b":"bi bi-arrows-collapse"} onClick={onExpandeChange}></button></td>
         <td><span>{HtmlParser(fxData.expDisplayString)}</span></td>
         <td>{fxData.result}</td>
     </tr>
 </table>
 <div style={{display:isExpanded?'block':'none'}}>
-<div className="d-flex">{vars}</div>
+<div className="d-flex b">{vars}</div>
 {fxs2} 
 </div>
 </div>
@@ -103,8 +103,9 @@ export function FxListHolder(props){
     }
 return (
     <div className="theme-box-border h-100 shadow">
-        <div className="text-white">
-         <div className="w-100 font-monospace bg-dark text-center">Formula</div>
+        <div className="text-center bg-dark w-100">
+         <div style={{color:'#fa8926'}} className="font-monospace">Formulas</div>
+         <div style={{fontSize:'small'}} className="text-center text-white fst-italic">{fxList.size>0?''+fxList.size+' formulas':'No formula'}</div>
         </div>
         <table style={{width:'100%'}}>
             <tr><td></td><td></td><td></td></tr>

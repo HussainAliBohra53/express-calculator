@@ -47,7 +47,7 @@ export function VarListHolder(props){
     }
 return (
     <div className="w-100 theme-box-border shadow h-100">
-        <div className="bg-dark text-white font-monospace text-center">Variables</div>
+        <div style={{color:'#8c96e7'}} className="bg-dark font-monospace text-center">Variables</div>
         
         <table>
             <tr><td></td><td></td><td></td></tr>
