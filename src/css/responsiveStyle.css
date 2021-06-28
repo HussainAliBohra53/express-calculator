@@ -1,0 +1,95 @@
+.var-bar{
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 20%;
+}
+
+.calculator-pad{
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30%;
+}
+.formula-bar{
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30%;
+    height: 100%;
+}
+.pad-container{
+    display: flex;
+}
+.fx-list-toggle{
+    display: none;
+}
+.var-bar-toggle{
+    display: none;
+}
+.fx-list-display{
+    display: block;
+}
+#oprPad,#numPad{
+border-collapse: collapse;
+table-layout: fixed;
+}
+#oprPad{
+    float: left;
+    width: 43%;
+}
+#numPad{
+    float: right;
+    width: 57%;
+}
+.fx-list-close{
+    display: none;
+}
+.var-list-close{
+    display: none;
+}
+@media screen and (max-width:700px) {
+    .fx-list-toggle{
+        display: block;
+        position: absolute;
+        top: 25%;
+        left: 0;
+    }
+    .var-bar-toggle{
+        display: block;
+        position: absolute;
+        top: 25%;
+        right: 0;  
+    }
+    .fx-list-close{
+        display: inline-block;
+    }
+    .var-list-close{
+        display: inline-block;
+    }
+    
+    .var-bar{
+       position: absolute;
+       width: 80%;
+       top: 0;
+       right:0;
+       background-color: azure;
+    }
+    .formula-bar{
+        position: absolute;
+        width: 90%;
+        top:0;
+        left: 0;
+        background-color: aquamarine;
+        }
+    .var-bar-display{
+        display: none;
+    }
+    .fx-list-display{
+        display: none;
+    }
+    
+    .calculator-pad{
+        width: 100%;
+    }
+}

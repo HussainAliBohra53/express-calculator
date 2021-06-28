@@ -52,7 +52,7 @@ return (
 <div className="w-100 dark">
 <table>
     <tr>
-        <td><button className={isExpanded?"bi b":"bi bi-arrows-collapse"} onClick={onExpandeChange}></button></td>
+        <td><span className={isExpanded?"bi bi-caret-down-fill":"bi bi-caret-right-fill"} onClick={onExpandeChange}></span></td>
         <td><span>{HtmlParser(fxData.expDisplayString)}</span></td>
         <td>{fxData.result}</td>
     </tr>
@@ -90,7 +90,7 @@ export function FxListHolder(props){
         <tr>
             <td><button className="add-var-button" name={key} onClick={props.OnAddFx}></button></td>
             <td><div style={{display:"flex"}}><span>{key}={value.result}</span></div></td>
-            <td><button name={key} onClick={OnDeleteFx} className="btn btn-info bi bi-trash"></button></td>
+            <td><button name={key} onClick={OnDeleteFx} className="no-style-button bi bi-trash"></button></td>
             </tr>
         );
         fxs.push(
@@ -101,10 +101,15 @@ export function FxListHolder(props){
             </tr>
         )
     }
+    function OnHideClick(event){
+      event.preventDefault();
+      props.OnHideClick(false);
+    }
 return (
     <div className="theme-box-border h-100 shadow">
         <div className="text-center bg-dark w-100">
-         <div style={{color:'#fa8926'}} className="font-monospace">Formulas</div>
+         <div style={{color:'#fa8926'}} className="font-monospace d-inline-block">Formulas</div>
+         <div className="d-inline-block float-end"><button className="fx-list-close no-style-button text-white" onClick={OnHideClick}>X</button></div>
          <div style={{fontSize:'small'}} className="text-center text-white fst-italic">{fxList.size>0?''+fxList.size+' formulas':'No formula'}</div>
         </div>
         <table style={{width:'100%'}}>

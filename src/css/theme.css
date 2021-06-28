@@ -5,6 +5,9 @@
     --box-bg-color:green;
 }
 
+
+
+
 .add-var-button{
     width:40px;
     height :20px;
@@ -22,7 +25,7 @@
 transform:translateX(20px);
 }
 .body{
-    background-color: white;
+    background-color: red;
 }
 .icon-rotate{
     transition: transform 1s;
@@ -31,6 +34,11 @@ transform:translateX(20px);
     transform: rotate(360deg);
 }
 .theme-box-border{
-    border:5px solid var(--box-border-color);
-    border-radius: 15px 15px 0px 0px;
+    border:2px solid var(--box-border-color);
+}
+.no-style-button{
+    border:0px;
+    background-color: transparent;
+    margin: 1px;
+    padding: 1px;
 }

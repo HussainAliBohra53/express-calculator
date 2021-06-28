@@ -8,6 +8,12 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <>
+  <div className="text-center app-header">
+            <h1> <div className="d-inline-block icon-rotate"><i className="bi bi-lightning-charge-fill"></i></div>
+            <div className="app-header-name" style={{display:'inline-block',fontFamily:'Rancho, serif'}}>Express Calculator<sup>Beta</sup></div>
+            </h1> 
+            
+            </div>
   <ExpProvider><AppV2/></ExpProvider>
     
     </>

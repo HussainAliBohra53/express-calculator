@@ -8,12 +8,14 @@ import {PopupFrame,ModelGetVarName,ModelGetFxName} from './Components/PopupFrame
 import { FxListHolder } from './Components/FormulaComponent';
 import * as FxUtility from './Js/FormulaUtility';
 import './css/theme.css';
+import './css/responsiveStyle.css';
 import { FxClass } from './Js/FormulaClass';
 export function AppV2(){
     const context=useContext(ExpContext);
     const [displayVarModal,setDisplayVarModal]=useState(false);
     const [displayFxModal,setDisplayFxModal]=useState(false);
-
+    const [displayFxList,setDisplayFxList]=useState(false);
+    const [displayVarList,setDisplayVarList]=useState(false);
     useEffect(()=>{
       document.title=context.result;
       
@@ -108,37 +110,39 @@ export function AppV2(){
       context.updateFxList(fxList);
       closeModal();
     }
+    function OnFxListShow(event){
+    event.preventDefault();
+    setDisplayFxList(true);
+    setDisplayVarList(false);
+    }
+    function OnVarListShow(event){
+      event.preventDefault();
+      setDisplayVarList(true);
+      setDisplayFxList(false);
+      }
     return(
-        <div className="">
+        <div>
           <PopupFrame display={displayVarModal} closeModal={closeModal}>
             <ModelGetVarName OnSave={AddNewVar}/>
           </PopupFrame>
           <PopupFrame display={displayFxModal} closeModal={closeModal}>
             <ModelGetFxName OnSave={AddNewFx}/>
           </PopupFrame>
-            <div className="text-center app-header">
-            <h1> <div className="d-inline-block icon-rotate"><i className="bi bi-lightning-charge-fill"></i></div>
-            <div className="app-header-name" style={{display:'inline-block',fontFamily:'Rancho, serif'}}>Express Calculator<sup>Beta</sup></div>
-            </h1> 
-            <div>
-            <button onClick={ClearAllHandler}>ClearAll</button></div>
+           <div className="d-lg-flex w-100">
+            <div style={{writingMode:'vertical-lr'}} className="fx-list-toggle" >
+             <span className="btn btn-primary" onClick={OnFxListShow}>Fx List</span>
             </div>
-           <div className="container-fluid">
-           <div className="row">
-           <div className="col-sm-4 col-md-4">
-             <div style={{display:'flex',flexDirection:'column'}}>
-               <div></div>
-               <div style={{alignContent:'flex-end'}}>
-             <CalculatorPad displayModalgetVarName={displayModalgetVarName} OnAddFxClick={displayModalgetFxName}/>
-             </div>
-             </div>
+           <div className="formula-bar" style={{display:displayFxList?'block':'none'}}>
+           <FxListHolder OnAddFx={OnAddFx} OnFxChange={OnFxChange} OnHideClick={setDisplayFxList}/>
            </div>
-           <div className="col-sm-4">
-             <FxListHolder OnAddFx={OnAddFx} OnFxChange={OnFxChange} />
+           <div style={{boxSizing:'border-box'}} className="calculator-pad w-100">
+           <CalculatorPad displayModalgetVarName={displayModalgetVarName} OnAddFxClick={displayModalgetFxName}/>
            </div>
-           <div className="col-sm-3 col-md-3">
-             <VarListHolder OnaddVarClick={OnaddVarClick} OnVarChange={OnVarChange} />  
-           </div>
+           <div style={{writingMode:'vertical-lr'}} className="var-bar-toggle">
+             <span className="btn btn-warning" onClick={OnVarListShow}>Var List</span>
+            </div>
+           <div className="var-bar" style={{display:displayVarList?'block':'none'}}>
+             <VarListHolder OnaddVarClick={OnaddVarClick} OnHideClick={setDisplayVarList} OnVarChange={OnVarChange} />  
            </div>
            </div>
         </div>

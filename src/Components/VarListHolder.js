@@ -2,6 +2,7 @@ import * as VarUtility from '../Js/VarUtility';
 import {useContext} from 'react';
 import { ExpContext } from './SampleContext';
 import './../css/theme.css';
+import './../css/responsiveStyle.css';
 export function VarHolder(props){
       
     return(
@@ -24,7 +25,9 @@ export function VarListHolder(props){
       context.updateVarList(lst);
       props.OnVarChange(lst);
     }
-
+    const OnHideClick=()=>{
+        props.OnHideClick(false);
+    }
     const deleteVar=(varName)=>{
      if(context.varList.has(varName)){
          if(context.tracker.varTracker.has(varName)){alert(varName+" is in use. Can't delete"); return;}
@@ -46,9 +49,12 @@ export function VarListHolder(props){
         </tr>);
     }
 return (
-    <div className="w-100 theme-box-border shadow h-100">
-        <div style={{color:'#8c96e7'}} className="bg-dark font-monospace text-center">Variables</div>
-        
+    <div className="theme-box-border shadow h-100">
+        <div className="bg-dark w-100">
+        <div className="float-start ml-3"><button className="no-style-button text-white" onClick={OnHideClick}>X</button>
+        </div>
+        <div style={{color:'#8c96e7',textAlign:'center'}} className="font-monospace">Variables</div>
+        </div>
         <table>
             <tr><td></td><td></td><td></td></tr>
             {vars}
