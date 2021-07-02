@@ -4,12 +4,12 @@ export const ExpContext=createContext();
 export const ExpProvider=({children})=>{
     const [expString,setExpString1] =useState(()=>{
         let a=JSON.parse(localStorage.getItem('expString'));
-        if(a==null)return "";
+        if(a===null)return "";
         return a;
     });
     const [expDisplayString,setExpDisplayString1]=useState(()=>{
         let a=JSON.parse(localStorage.getItem('expDisplayString'));
-        if(a==null)return "";
+        if(a===null)return "";
         return a; 
     });
     const [result,setResult1]=useState(()=>{
@@ -18,7 +18,7 @@ export const ExpProvider=({children})=>{
     const [angle,setAngle]=useState('deg');
     const [varList,updateVarList1]=useState(()=>{
       let a=localStorage.getItem('varList');
-      if(a==null||a==="undefined"||a==""){
+      if(a===null||a==="undefined"||a===""){
           return new Map();
       }
       return new Map(Object.entries(JSON.parse(a)));
@@ -30,17 +30,17 @@ export const ExpProvider=({children})=>{
     }
     const [expStack,updateExpStack1]=useState(()=>{
         let a=JSON.parse(localStorage.getItem('expStack'));
-        if(a==null)return [];
+        if(a===null)return [];
         return a; 
     });
     const [expDisplayStack,updateExpDisplayStack1]=useState(()=>{
         let a=JSON.parse(localStorage.getItem('expDisplayStack'));
-        if(a==null)return [];
+        if(a===null)return [];
         return a; 
     });
     const [elemTracker,updateElemTracker1]=useState(()=>{
         let a=localStorage.getItem('elemTracker');
-        if(a==""||a==null)return [];
+        if(a===""||a===null)return [];
         return JSON.parse(a);
     });
     const updateElemTracker=(track)=>{
@@ -49,12 +49,12 @@ export const ExpProvider=({children})=>{
     }
     const [fxList,updateFxList1]=useState(()=>{
         let a=localStorage.getItem('fxList');
-        if(a==null||a==="undefined"||a=="")return new Map();
+        if(a===null||a==="undefined"||a==="")return new Map();
         return fxUtility.jsonToFxList(a);
     })
     const [tracker,updateTracker1]=useState(()=>{
        let a=JSON.parse(localStorage.getItem('tracker'));
-       if(a==null) return {varTracker:new Map(),fxTracker:new Map()};
+       if(a===null) return {varTracker:new Map(),fxTracker:new Map()};
        return {varTracker:new Map(Object.entries(a.varTracker)),fxTracker:new Map(Object.entries(a.fxTracker))};
     });
     const [error,setError1]=useState(()=>{
@@ -71,7 +71,7 @@ export const ExpProvider=({children})=>{
     const setExpString=(str)=>{
    localStorage.setItem('expString',JSON.stringify(str));
    setExpString1(str);
-   if(str=="")setResult(0);
+   if(str==="")setResult(0);
     }
     const setExpDisplayString=(str)=>{
         localStorage.setItem('expDisplayString',JSON.stringify(str));

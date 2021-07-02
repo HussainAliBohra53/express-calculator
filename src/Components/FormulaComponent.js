@@ -5,9 +5,9 @@ import * as Utility2 from '../Js/VarUtility';
 import * as MathUtility from '../Js/MathUtility';
 import * as FxUtility from '../Js/FormulaUtility';
 import './../css/theme.css';
+import './../css/formulaList.css'
 export function FxHolder(props){
 let fxData=props.data;
-console.log(fxData);
 let [isExpanded,setExpanded]=useState(false);
 const onExpandeChange=()=>{
     setExpanded(!isExpanded);
@@ -29,8 +29,6 @@ let name=event.target.name;
 let value=event.target.value;
 let varmap=Utility2.copyVarMap(fxData.varList);
 varmap.set(name,value);
-console.log("fx var list");
-console.log(varmap);
 fxData.varList=varmap;
 let scope=MathUtility.scopeGeneratorFromMap(fxData.varList,fxData.fxList);
 let r=MathUtility.calculateWithScope(fxData.expString,scope);
@@ -42,24 +40,39 @@ if(r.status!=="ok"){
 }
 }
 for(let [key,value] of fxData.varList){
-vars.push(<div>{key}=<input name={key} onChange={onVarChange} className="input w-75" value={value}/></div>)
+vars.push(<div className="var-wrapper bg-light"><div className="inner-var-name large-name">{key}</div><div><input name={key} onChange={onVarChange} className="no-style-input h-100 w-75 float-end" value={value}/></div></div>)
 }
 let fxs2=[];
 for(let [key,value] of fxData.fxList){
-    fxs2.push(<FxHolder OnFxChange={OnFxChange} name={key} data={value}/>)
+    fxs2.push(<FxHolder OnFxChange={OnFxChange} name={key} data={value} parent={false}/>)
     }
 return (
-<div className="w-100 dark">
+<div className="w-100 pt-2">
+<table style={{tableLayout:'fixed',width:'100%'}}>
+<tr>
+            <td style={{width:'40px'}}><button style={{display:props.parent?'inline-block':'none'}} title="Append to calculator screen" className="cal-icon no-style-button mr-2  bi bi-calculator" name={props.name} onClick={props.OnAddFx}></button>
+            </td>
+            <td style={{width:'60%'}}>
+                <div title={props.name} className="w-100 large-name fx-name text-capitalize font-combo">{props.name}</div>
+            </td>
+            <td>
+            <div title={fxData.result} style={{float:'right',width:'100%'}} className="bg-light large-name fx-result">{fxData.result}</div>
+            </td>
+            <td style={{width:'20px',paddingRight:'10px'}}><button title="delete" style={{display:props.parent?'inline-block':'none'}} name={props.name} onClick={props.OnDeleteFx} className="no-style-button bi bi-trash"></button></td>
+            </tr>
+            </table>
 <table>
     <tr>
-        <td><span className={isExpanded?"bi bi-caret-down-fill":"bi bi-caret-right-fill"} onClick={onExpandeChange}></span></td>
-        <td><span>{HtmlParser(fxData.expDisplayString)}</span></td>
-        <td>{fxData.result}</td>
+        <td width="20px"><span className={isExpanded?"bi bi-caret-down-fill":"bi bi-caret-right-fill"} onClick={onExpandeChange}></span></td>
+        
+        <td><span className="exp-label"><span className="text-break">{HtmlParser(fxData.expDisplayString)}</span></span></td>
     </tr>
 </table>
-<div style={{display:isExpanded?'block':'none'}}>
-<div className="d-flex b">{vars}</div>
+<div style={{display:isExpanded?'block':'none',borderLeft:'1px solid red',marginLeft:'5px'}}>
+<div className="var-container">{vars}</div>
+<div className="">
 {fxs2} 
+</div>
 </div>
 </div>
 )
@@ -75,9 +88,11 @@ export function FxListHolder(props){
     const OnDeleteFx=(event)=>{
     let fxName=event.target.name;
     if(context.tracker.fxTracker.has(fxName)){
-        alert("Can't delete "+fxName+". It's in Use");
+        alert("Deletion failed: Expression "+fxName+" is in use.");
         return;
     }
+    let confirm=window.confirm("Are you sure to delete "+fxName);
+    if(!confirm)return;
     let fxlist=FxUtility.shallowCopyFxList(context.fxList);
     fxlist.delete(fxName);
     context.updateFxList(fxlist);
@@ -86,34 +101,31 @@ export function FxListHolder(props){
     let fxList=context.fxList;
     let fxs=[];
     for(let [key,value] of fxList){
-        fxs.push(
-        <tr>
-            <td><button className="add-var-button" name={key} onClick={props.OnAddFx}></button></td>
-            <td><div style={{display:"flex"}}><span>{key}={value.result}</span></div></td>
-            <td><button name={key} onClick={OnDeleteFx} className="no-style-button bi bi-trash"></button></td>
-            </tr>
-        );
+        
         fxs.push(
             <tr>
                 <td colSpan="3">
-                <FxHolder OnFxChange={OnFxChange} name={key} data={value}/> 
+                <div className="fx-wrapper">
+                <FxHolder OnFxChange={OnFxChange} OnAddFx={props.OnAddFx} OnDeleteFx={OnDeleteFx} name={key} data={value} parent={true}/> 
+                </div>
                 </td>
             </tr>
         )
+        fxs.push(<tr style={{height:'5px'}}><td colSpan="3"></td></tr>)
     }
     function OnHideClick(event){
       event.preventDefault();
       props.OnHideClick(false);
     }
 return (
-    <div className="theme-box-border h-100 shadow">
+    <div className="theme-box-border h-100 shadow fx-list-container">
         <div className="text-center bg-dark w-100">
          <div style={{color:'#fa8926'}} className="font-monospace d-inline-block">Formulas</div>
          <div className="d-inline-block float-end"><button className="fx-list-close no-style-button text-white" onClick={OnHideClick}>X</button></div>
          <div style={{fontSize:'small'}} className="text-center text-white fst-italic">{fxList.size>0?''+fxList.size+' formulas':'No formula'}</div>
         </div>
-        <table style={{width:'100%'}}>
-            <tr><td></td><td></td><td></td></tr>
+        <table style={{width:'100%'}} className="fx-list-table">
+            <tr style={{height:'5px'}}><td></td><td></td><td></td></tr>
             {fxs}
         </table>
     </div>

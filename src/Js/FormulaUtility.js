@@ -82,14 +82,15 @@ export function jsonToFxList(json){
     return newMap;
 }
 export function validateFunctionName(fxName,fxs){
-    let format = /[!@#$%^&*()+\-=\[\]{};':"\\|,.<>\/?]+/;
-    if(fxName==""||fxName.length==0){
+    let format = /!@#$%^&*()+\-=\[\]{};':"\\|,.<>\/?]+/;
+    if(fxName===""||fxName.length===0){
         return {status:false,msg:"Please enter some value."};
     }
     if(fxName.indexOf(' ') >= 0){return {status:false,msg:"space is not allowed."};}
     if(format.test(fxName)){
         return {status:false,msg:"special characters are not allowed."};
     }
+    if(fxName.length>20)return {status:false,msg:"Name should not contains more than 10 characters"}
     if(fxs.has(fxName)){
         return {status:false,msg:""+fxName+" already exist."};
     }

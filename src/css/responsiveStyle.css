@@ -1,22 +1,23 @@
 .var-bar{
-    height: 100%;
+    height: 88vh;
     margin-left: 10px;
     margin-right: 10px;
-    width: 20%;
+    width: 26%;
 }
 
 .calculator-pad{
-    height: 100%;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 30%;
+    height: 88vh;
+    position: relative;
+    width: 40%;
 }
 .formula-bar{
     background-color: white;
     margin-left: 10px;
     margin-right: 10px;
     width: 30%;
-    height: 100%;
+    height: 88vh;
+    resize: horizontal;
+    overflow: auto;
 }
 .pad-container{
     display: flex;
@@ -30,36 +31,39 @@
 .fx-list-display{
     display: block;
 }
-#oprPad,#numPad{
-border-collapse: collapse;
-table-layout: fixed;
-}
-#oprPad{
-    float: left;
-    width: 43%;
-}
-#numPad{
-    float: right;
-    width: 57%;
-}
+
 .fx-list-close{
     display: none;
 }
 .var-list-close{
     display: none;
 }
-@media screen and (max-width:700px) {
+
+@media screen and (max-width:768px) {
     .fx-list-toggle{
         display: block;
         position: absolute;
-        top: 25%;
+        top: 20%;
         left: 0;
+        z-index: 3;
+        background-color: orange;
+        padding: 2px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        border-radius: 4px;
+        width: fit-content;
     }
     .var-bar-toggle{
         display: block;
         position: absolute;
-        top: 25%;
-        right: 0;  
+        top: 20%;
+        right: 0; 
+        z-index: 3; 
+        background-image: linear-gradient(45deg,rgb(61, 92, 230),rgb(19, 41, 236));
+        padding: 2px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        border-radius: 4px;
     }
     .fx-list-close{
         display: inline-block;
@@ -69,18 +73,23 @@ table-layout: fixed;
     }
     
     .var-bar{
-       position: absolute;
+       position: fixed;
        width: 80%;
        top: 0;
        right:0;
        background-color: azure;
+       z-index:4;
+       height: 100%;
+       border: 0px;
     }
     .formula-bar{
-        position: absolute;
+        position: fixed;
         width: 90%;
         top:0;
         left: 0;
-        background-color: aquamarine;
+        height: 100%;
+        resize: none;
+        z-index:4;
         }
     .var-bar-display{
         display: none;
@@ -91,5 +100,9 @@ table-layout: fixed;
     
     .calculator-pad{
         width: 100%;
+        padding: 0;
+        margin: 0;
+        border: 0px;
+        box-sizing: border-box;
     }
 }

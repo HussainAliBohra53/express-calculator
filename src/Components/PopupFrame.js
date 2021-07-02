@@ -6,19 +6,19 @@ import './../css/theme.css';
 export function PopupFrame(props){
 
     return (
-        <div style={{width:'100%',position:'fixed',height:'100vh',backgroundColor:'transparent',display:props.display?'flex':'none',flexDirection:'column',justifyContent:'space-around'}}>
-            <div style={{top:'25%',display:"flex",justifyContent:'space-around'}}>
-                <div>
-                <div className="theme-box-border">
-                    <div className="bg-dark"> 
-                      {props.heading}
-                    </div>
-                    <button className="btn btn-dark align-content-end">X</button>
-                </div>
-               {props.children}
-               </div>
+        <div class="modal" tabindex="-1" style={{display:props.display?'block':'none'}}>
+        <div class="modal-dialog" style={{top:'20%',width:'fit-content'}} >
+          <div class="modal-content">
+            <div class="modal-header p-2">
+              <h5 class="modal-title">{props.heading}</h5>
+              <button type="button" onClick={props.closeModal} class="btn-close text-white"></button>
             </div>
+            <div class="modal-body">
+              {props.children}
+            </div>
+          </div>
         </div>
+      </div>
     )
 }
 export function ModelGetVarName(props){
@@ -38,12 +38,13 @@ export function ModelGetVarName(props){
     const SaveVariableHandler=()=>{
         if(validateVarName(input,context.varList).status){
             props.OnSave(input);
+            setInput('');
         }
     }
     return(
         <> 
             <input className="input" value={input} onChange={inputEventHandler} placeholder="Variable Name"/>
-            <button className="btn btn-success" {...error.length>0?'disabled':''} onClick={SaveVariableHandler}>Save</button>
+            <button className="bg-dark rounded text-white font-monospace" style={{width:'60px',height:'30px'}} onClick={SaveVariableHandler}>Save</button>
             <div className="text-center text-danger">{error}</div>
         </>
     )
@@ -66,6 +67,7 @@ export function ModelGetFxName(props){
     const OnSaveClick=()=>{
      if(!validateFunctionName(input,context.fxList).status) return;
      let name=input;
+     setInput('');
      props.OnSave(name);
     }
 return (

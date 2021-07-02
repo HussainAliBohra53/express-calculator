@@ -4,17 +4,22 @@ import './index.css';
 import {AppV2} from './App';
 import {ExpProvider} from './Components/SampleContext';
 import reportWebVitals from './reportWebVitals';
+var screenSize=1400;
+var isMobile=false;
 
+screenSize=window.screen.width;
+if(screenSize<=768){
+  isMobile=true;
+}
 
 ReactDOM.render(
   <>
-  <div className="text-center app-header">
-            <h1> <div className="d-inline-block icon-rotate"><i className="bi bi-lightning-charge-fill"></i></div>
-            <div className="app-header-name" style={{display:'inline-block',fontFamily:'Rancho, serif'}}>Express Calculator<sup>Beta</sup></div>
-            </h1> 
-            
+  <div className="text-center app-header mt-1" style={{height:'10vh'}}>
+            <h3> <div className="d-inline-block icon-rotate"><i className="bi bi-lightning-charge-fill"></i></div>
+            <div className="app-header-name d-inline">Express Calculator<sup>Beta</sup></div>
+            </h3> 
             </div>
-  <ExpProvider><AppV2/></ExpProvider>
+  <ExpProvider><AppV2 isMobile={isMobile} /></ExpProvider>
     
     </>
   ,

@@ -22,6 +22,17 @@ export function OnkeypadClick(bname,expStack,expDisplayStack,elemTracker,postBac
            expStack.push('sqrt(');
            expDisplayStack.push('&#8730;(');
            elemTracker.push('opr');
+       }
+      else if(bname==="square"){
+        expStack.push('^2');
+        expDisplayStack.push('<sup>2</sup>');
+        elemTracker.push('opr');
+
+       }else if(bname==="pownegone"){
+        expStack.push('^-1');
+        expDisplayStack.push('<sup>-1</sup>');
+        elemTracker.push('opr');
+        
        }else if(bname==="/"){
            expStack.push('/');
            expDisplayStack.push('&#247;');

@@ -10,15 +10,17 @@ import * as FxUtility from './Js/FormulaUtility';
 import './css/theme.css';
 import './css/responsiveStyle.css';
 import { FxClass } from './Js/FormulaClass';
-export function AppV2(){
+export function AppV2(props){
+  
     const context=useContext(ExpContext);
     const [displayVarModal,setDisplayVarModal]=useState(false);
     const [displayFxModal,setDisplayFxModal]=useState(false);
-    const [displayFxList,setDisplayFxList]=useState(false);
-    const [displayVarList,setDisplayVarList]=useState(false);
+    const [displayFxList,setDisplayFxList]=useState(!props.isMobile);
+    const [displayVarList,setDisplayVarList]=useState(!props.isMobile);
+
     useEffect(()=>{
+    
       document.title=context.result;
-      
     });
 
     useEffect(()=>{
@@ -45,7 +47,7 @@ export function AppV2(){
     const OnVarChange=(list)=>{
       let scope=MathUtility.scopeGeneratorFromMap(list,context.fxList);
       let r=MathUtility.calculateWithScope(context.expString,scope);
-      if(r.status!='ok'){
+      if(r.status!=='ok'){
         context.setError(true);
       }else{
         context.setResult(r.result);
@@ -56,7 +58,7 @@ export function AppV2(){
     const OnFxChange=()=>{
       let scope=MathUtility.scopeGeneratorFromMap(context.varList,context.fxList);
       let r=MathUtility.calculateWithScope(context.expString,scope);
-      if(r.status!='ok'){
+      if(r.status!=='ok'){
         context.setError(false);
       }else{
         context.setResult(r.result);
@@ -72,7 +74,7 @@ export function AppV2(){
         context.setExpString(Texpstring);
         let Texpdisstring=MathUtility.arrayToString(arr2);
         context.setExpDisplayString(Texpdisstring);
-        if(r.status!='ok'){
+        if(r.status!=='ok'){
           context.setError(true);
         }else{
           context.setResult(r.result);
@@ -110,37 +112,38 @@ export function AppV2(){
       context.updateFxList(fxList);
       closeModal();
     }
-    function OnFxListShow(event){
-    event.preventDefault();
+    const OnFxListShow=()=>{
     setDisplayFxList(true);
     setDisplayVarList(false);
     }
-    function OnVarListShow(event){
-      event.preventDefault();
+    function OnVarListShow(){
       setDisplayVarList(true);
       setDisplayFxList(false);
       }
+      
+      
     return(
         <div>
-          <PopupFrame display={displayVarModal} closeModal={closeModal}>
+          <PopupFrame heading="Enter the variable name" display={displayVarModal} closeModal={closeModal}>
             <ModelGetVarName OnSave={AddNewVar}/>
           </PopupFrame>
-          <PopupFrame display={displayFxModal} closeModal={closeModal}>
+          <PopupFrame heading="Enter the Expression name" display={displayFxModal} closeModal={closeModal}>
             <ModelGetFxName OnSave={AddNewFx}/>
           </PopupFrame>
-           <div className="d-lg-flex w-100">
-            <div style={{writingMode:'vertical-lr'}} className="fx-list-toggle" >
-             <span className="btn btn-primary" onClick={OnFxListShow}>Fx List</span>
+           <div className="d-lg-flex">
+            <div id="eb" style={{writingMode:'vertical-lr'}} className="fx-list-toggle">
+             <span  onClick={OnFxListShow}>Expressions</span>
             </div>
-           <div className="formula-bar" style={{display:displayFxList?'block':'none'}}>
+            <div style={{writingMode:'vertical-lr'}} className="var-bar-toggle">
+             <span onClick={OnVarListShow}>variables</span>
+            </div>
+           <div id="fbar" className="formula-bar" style={{display:displayFxList?'block':'none'}}>
            <FxListHolder OnAddFx={OnAddFx} OnFxChange={OnFxChange} OnHideClick={setDisplayFxList}/>
            </div>
-           <div style={{boxSizing:'border-box'}} className="calculator-pad w-100">
+           <div className="calculator-pad">
            <CalculatorPad displayModalgetVarName={displayModalgetVarName} OnAddFxClick={displayModalgetFxName}/>
            </div>
-           <div style={{writingMode:'vertical-lr'}} className="var-bar-toggle">
-             <span className="btn btn-warning" onClick={OnVarListShow}>Var List</span>
-            </div>
+           
            <div className="var-bar" style={{display:displayVarList?'block':'none'}}>
              <VarListHolder OnaddVarClick={OnaddVarClick} OnHideClick={setDisplayVarList} OnVarChange={OnVarChange} />  
            </div>

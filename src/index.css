@@ -8,6 +8,16 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: 'Mulish',sans-serif,source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.app-header-name{
+ font-family:  'Mulish',sans-serif;
+ font-weight: bold;
+ color: maroon;
+}
+.modal-title{
+  font-family:  'Mulish',sans-serif;
+  color: black; 
+  font-weight: 400;
 }

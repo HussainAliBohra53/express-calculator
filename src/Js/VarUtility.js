@@ -5,12 +5,14 @@ return vars;
 }
 export function validateVarName(varName,varList){
    let format = /[!@#$%^&*()+\-=\[\]{};':"\\|,.<>\/?]+/;
-   if(varName==""||varName.length==0){
+   if(varName===""||varName.length===0){
        return {status:true,msg:"please enter some value."};
    }
+
    if(format.test(varName)){
     return {status:false,msg:"special characters are not allowed."};
    }
+   if(varName.length>10) return {status:false,msg:"Variable name length should not more than 10 characters."};
    if(varName.indexOf(' ') >= 0){
        return {status:false,msg:"space is not allowed."};
 }
@@ -43,15 +45,12 @@ return {'expStr':l1,'expDisStr':l2,'elemTracker':l3};
    
 export function expTracker(tracker,opr,key){
     
-    console.log("recieved tracker");
-    console.log(tracker);
     let varlist=copyVarMap(tracker.varTracker);
     let fxlist=copyVarMap(tracker.fxTracker);
     switch(opr){
         case 'addVar':{
         if(varlist.has(key)){
         let c=varlist.get(key);
-        console.log("add var");
         c++;
         varlist.set(key,c);
         }else{
@@ -73,7 +72,7 @@ export function expTracker(tracker,opr,key){
             if(varlist.has(key)){
                 let c=varlist.get(key);
                 c--;
-                if(c==0){
+                if(c===0){
                     varlist.delete(key);
                 }else{         
                     varlist.set(key,c);
@@ -85,7 +84,7 @@ export function expTracker(tracker,opr,key){
             if(fxlist.has(key)){
                 let c=fxlist.get(key);
                 c--;
-                if(c==0){
+                if(c===0){
                     fxlist.delete(key);
                 }else{         
                     fxlist.set(key,c);
@@ -107,7 +106,5 @@ for(let [key,value] of tracker.fxTracker){
     }
 Fx.varList=vars;
 Fx.fxList=fxs;
-console.log("Fx after tracer update");
-console.log(Fx);
 return Fx;
 }
