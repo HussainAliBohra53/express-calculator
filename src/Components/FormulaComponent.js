@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import HtmlParser from "react-html-parser";
-import { ExpContext } from "./SampleContext"
+import { ExpContext } from "./MainContext"
 import * as Utility2 from '../Js/VarUtility';
 import * as MathUtility from '../Js/MathUtility';
 import * as FxUtility from '../Js/FormulaUtility';
@@ -40,7 +40,7 @@ if(r.status!=="ok"){
 }
 }
 for(let [key,value] of fxData.varList){
-vars.push(<div className="var-wrapper bg-light"><div className="inner-var-name large-name">{key}</div><div><input name={key} onChange={onVarChange} className="no-style-input h-100 w-75 float-end" value={value}/></div></div>)
+vars.push(<div className="var-wrapper bg-light"><div className="inner-var-name ">{key}</div><div className="fx-var-input"><input name={key} onChange={onVarChange} className=" no-style-input h-100 w-75 float-end" value={value}/></div></div>)
 }
 let fxs2=[];
 for(let [key,value] of fxData.fxList){
@@ -52,7 +52,7 @@ return (
 <tr>
             <td style={{width:'40px'}}><button style={{display:props.parent?'inline-block':'none'}} title="Append to calculator screen" className="cal-icon no-style-button mr-2  bi bi-calculator" name={props.name} onClick={props.OnAddFx}></button>
             </td>
-            <td style={{width:'60%'}}>
+            <td style={{width:'40%'}}>
                 <div title={props.name} className="w-100 large-name fx-name text-capitalize font-combo">{props.name}</div>
             </td>
             <td>
@@ -69,7 +69,7 @@ return (
     </tr>
 </table>
 <div style={{display:isExpanded?'block':'none',borderLeft:'1px solid red',marginLeft:'5px'}}>
-<div className="var-container">{vars}</div>
+<div className="var-container" style={{marginLeft:'5px'}}>{vars}</div>
 <div className="">
 {fxs2} 
 </div>
@@ -79,6 +79,7 @@ return (
 }
 export function FxListHolder(props){
     const context=useContext(ExpContext);
+    let total=context.fxList.size;
     const OnFxChange=()=>{
     let fxCopy= FxUtility.shallowCopyFxList(context.fxList);
     context.updateFxList(fxCopy);
@@ -119,15 +120,35 @@ export function FxListHolder(props){
     }
 return (
     <div className="theme-box-border h-100 shadow fx-list-container">
-        <div className="text-center bg-dark w-100">
-         <div style={{color:'#fa8926'}} className="font-monospace d-inline-block">Formulas</div>
-         <div className="d-inline-block float-end"><button className="fx-list-close no-style-button text-white" onClick={OnHideClick}>X</button></div>
+        <div className="text-center w-100 pt-1">
+         <div style={{color:'#fa8926'}} className="h4 d-inline-block">Expressions</div>
+         <div className="d-inline-block float-end"><button className="p-2 bg-light fx-list-close no-style-button" onClick={OnHideClick}>X</button></div>
          <div style={{fontSize:'small'}} className="text-center text-white fst-italic">{fxList.size>0?''+fxList.size+' formulas':'No formula'}</div>
         </div>
         <table style={{width:'100%'}} className="fx-list-table">
-            <tr style={{height:'5px'}}><td></td><td></td><td></td></tr>
             {fxs}
         </table>
+        <div style={{display:total<1?'block':'none'}}>
+            <div className="zero-fx-wrapper h-100">
+            <div className="zero-fx-tile ">
+                <div>
+                <h2 className="text-center font-combo">Oops, No Expression</h2>
+                <div className="px-5">
+                    <ol>
+                        <li>Click +V to add New Variables. 
+                        <br/> e.g.<span className="bg-white mx-2 px-1">length=5</span>,<span className="px-1 bg-white mx-2">height=5</span>, ....<br/></li>
+                        <li>Create expression using variables.
+                        <div><span className="bg-light rounded px-2 p-1">e.g. length x heigth x 0.5</span></div></li>
+                        <li>click +E to add expression in expression list</li>
+                        <li>Give your expression a name</li>
+                        <li><span className="inner-var-name">e.g. area_of_triangle</span></li>
+                        <li>Click on the icon <span className="bi bi-calculator"></span> to use this expression into expression</li>
+                    </ol>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
 )
 }

@@ -1,6 +1,6 @@
 import React,{useContext,useEffect,useState} from 'react';
 import {CalculatorPad} from './Components/CalculatorPad';
-import {ExpContext} from './Components/SampleContext';
+import {ExpContext} from './Components/MainContext';
 import * as VarUtility from './Js/VarUtility';
 import * as MathUtility from './Js/MathUtility';
 import { VarListHolder } from './Components/VarListHolder';
@@ -145,7 +145,7 @@ export function AppV2(props){
            </div>
            
            <div className="var-bar" style={{display:displayVarList?'block':'none'}}>
-             <VarListHolder OnaddVarClick={OnaddVarClick} OnHideClick={setDisplayVarList} OnVarChange={OnVarChange} />  
+             <VarListHolder displayModalgetVarName={displayModalgetVarName} OnaddVarClick={OnaddVarClick} OnHideClick={setDisplayVarList} OnVarChange={OnVarChange} />  
            </div>
            </div>
         </div>

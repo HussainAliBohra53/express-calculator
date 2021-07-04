@@ -16,8 +16,10 @@ export function validateVarName(varName,varList){
    if(varName.indexOf(' ') >= 0){
        return {status:false,msg:"space is not allowed."};
 }
-   if(varList.has(varName)){
+   for(let[key] of varList){
+       if(key.toUpperCase()===varName.toUpperCase()){
        return {status:false,msg:""+varName+" already exist."};
+       }
    }
    return {status:true,msg:""};
 }

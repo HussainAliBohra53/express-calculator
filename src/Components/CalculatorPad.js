@@ -2,9 +2,10 @@ import React,{useContext} from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import * as VarUtility from '../Js/VarUtility';
 import KeyPadComponent from './KeyPad';
-import { ExpContext } from './SampleContext';
+import { ExpContext } from './MainContext';
 import * as MathUtility from '../Js/MathUtility';
 import * as KeypadUtility from '../Js/KeyPadUtility';
+import './../css/responsiveStyle.css';
 import './../css/theme.css';
 export function CalculatorPad(props){
     let context=useContext(ExpContext);
@@ -71,8 +72,8 @@ export function CalculatorPad(props){
     props.OnAddFxClick();
     }
     return (
-        <div className="theme-box-border h-100 ">         
-            <div className="bg-dark text-center" style={{position:'relative',top:'0px',width:'100%'}}>
+        <div className="cal-pad-border h-100">         
+            <div  className="cal-pad-header bg-dark text-center" style={{position:'relative',top:'0px',width:'100%'}}>
             <span className="px-3"><i style={{color:context.error?'red':'green'}}className="bi bi-lightning-charge-fill" title="Invalid Expression"></i></span>
             <span className=" text-white">Calculator PAD</span>
             </div>
@@ -83,19 +84,19 @@ export function CalculatorPad(props){
              
             <div className="col-9">
             <div className="exp-wrapper">
-            <span className="text-break" style={{letterSpacing:'1px',overflowX:'scroll'}}>{ReactHtmlParser(context.expDisplayString)}</span>
+            <span className="text-break main-exp" style={{letterSpacing:'1px',overflowX:'scroll'}}>{ReactHtmlParser(context.expDisplayString)}</span>
             </div>
            </div>
-           <div className="col-3"><button className="new-exp" onClick={ValidateNewFx}>E+</button> </div>
+           <div className="col-3"><button className="new-exp" onClick={ValidateNewFx}>+E</button> </div>
            </div>
            <hr className="mt-2 mb-2" />
            <div className="row">
             
-            <div className="col-9 mb-2">
+            <div className="col-9 mb-2 text-break ans">
              
             <span style={{alignContent:'baseline'}}>Ans={context.expString.length>0?context.result:'0'}</span>
            </div>
-           <div className="col-3"><button onClick={props.displayModalgetVarName} className="new-var" style={{float:'left',margin:'0px'}}>V+</button> </div>
+           <div className="col-3"><button onClick={props.displayModalgetVarName} className="new-var" style={{float:'left',margin:'0px'}}>+V</button> </div>
            </div>
            
          </div>

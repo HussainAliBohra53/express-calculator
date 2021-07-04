@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {AppV2} from './App';
-import {ExpProvider} from './Components/SampleContext';
+import {ExpProvider} from './Components/MainContext';
 import reportWebVitals from './reportWebVitals';
 var screenSize=1400;
 var isMobile=false;
@@ -14,10 +14,12 @@ if(screenSize<=768){
 
 ReactDOM.render(
   <>
-  <div className="text-center app-header mt-1" style={{height:'10vh'}}>
+  <div className="text-center app-header" style={{height:'10vh',display:'flex',flexDirection:'column',justifyContent:'space-around'}}>
+          <div>
             <h3> <div className="d-inline-block icon-rotate"><i className="bi bi-lightning-charge-fill"></i></div>
             <div className="app-header-name d-inline">Express Calculator<sup>Beta</sup></div>
             </h3> 
+            </div>
             </div>
   <ExpProvider><AppV2 isMobile={isMobile} /></ExpProvider>
     

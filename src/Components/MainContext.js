@@ -1,5 +1,5 @@
 import React,{createContext,useState} from 'react';
-import * as fxUtility from './../Js/FormulaUtility';
+import * as fxUtility from '../Js/FormulaUtility';
 export const ExpContext=createContext();
 export const ExpProvider=({children})=>{
     const [expString,setExpString1] =useState(()=>{

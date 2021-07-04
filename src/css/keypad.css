@@ -1,15 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cambo&display=swap');
 
-.button-animate{
-    transition: transform 1s;
-}
-.button-animate:hover{
-    transform: scale(1.1);
-}
-#keypad button{
-    transition: transform 1s;  
-}
+
 #keypad{
     width:100%;
     background-image: white;
@@ -21,31 +13,35 @@
 }
 #oprPad td{
     margin: 0px;
-    padding: 0px;
+    padding: auto;
 }
 #oprPad button{
     width: 100%;
     text-align: center;
-    font-family: 'Cambo', serif;
+    
     color:white;
+    height:5vh;
+    font-size: 3vh;
+    
 }
 #numPad{
-
     table-layout: fixed;
     width:100%;
     background-color: black;
     border-collapse: collapse;
 }
-
 #numpad td{
     margin: 0px;
-    padding: 0px;
-
+    padding: auto;
 }
 #numPad button{
     width: 100%;
     text-align: center;
     color: white; 
+    height:5vh;
+    font-size: 3vh;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
 }
 
 

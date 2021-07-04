@@ -91,7 +91,8 @@ export function validateFunctionName(fxName,fxs){
         return {status:false,msg:"special characters are not allowed."};
     }
     if(fxName.length>20)return {status:false,msg:"Name should not contains more than 10 characters"}
-    if(fxs.has(fxName)){
+    for(let[key] of fxs){
+        if(key.toUpperCase()===fxName)
         return {status:false,msg:""+fxName+" already exist."};
     }
 return {status:true,msg:''};

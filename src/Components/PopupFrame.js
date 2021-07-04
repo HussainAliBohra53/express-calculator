@@ -1,5 +1,5 @@
 import { useState, useContext} from "react"
-import { ExpContext } from "./SampleContext";
+import { ExpContext } from "./MainContext";
 import {validateVarName} from './../Js/VarUtility';
 import {validateFunctionName} from './../Js/FormulaUtility';
 import './../css/theme.css';

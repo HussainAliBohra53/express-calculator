@@ -6,7 +6,7 @@
 }
 
 .calculator-pad{
-    height: 88vh;
+    height: 90vh;
     position: relative;
     width: 40%;
 }
@@ -38,20 +38,46 @@
 .var-list-close{
     display: none;
 }
-
+.cal-pad-border{
+    border:2px solid black;
+}
+.main-exp{
+    font-size: 2vw;
+}
+.ans{
+    font-size: 2.2vw;
+    font-family: 'Josefin',sans-serif;
+    font-style: oblique;
+}
 @media screen and (max-width:768px) {
+    .main-exp{
+        font-size: 2.5vh;
+    }
+    .ans{
+        font-size: 3vh;
+    }
+    .cal-pad-border{
+        border: 0px;
+    }
+    .cal-pad-header{
+        display: none;
+    }
     .fx-list-toggle{
         display: block;
         position: absolute;
-        top: 20%;
+        top: 18%;
         left: 0;
         z-index: 3;
-        background-color: orange;
-        padding: 2px;
+        background-color: lightcyan;
+        padding: 3px;
         padding-top: 4px;
         padding-bottom: 4px;
         border-radius: 4px;
-        width: fit-content;
+        font-family: 'Mulish', sans-serif;  
+        color: darkorange;    
+        font-weight: 700;  
+        font-size: medium;
+        font-size: 2.5vh;
     }
     .var-bar-toggle{
         display: block;
@@ -59,11 +85,15 @@
         top: 20%;
         right: 0; 
         z-index: 3; 
-        background-image: linear-gradient(45deg,rgb(61, 92, 230),rgb(19, 41, 236));
-        padding: 2px;
+        background-color: lightcyan;
+        padding: 5px;
         padding-top: 4px;
         padding-bottom: 4px;
         border-radius: 4px;
+        font-size: medium;
+        font-weight: 700;
+        font-family: 'Mulish', sans-serif;  
+        font-size: 2.5vh;
     }
     .fx-list-close{
         display: inline-block;
@@ -83,11 +113,12 @@
        border: 0px;
     }
     .formula-bar{
+        box-sizing: border-box;
         position: fixed;
         width: 90%;
         top:0;
         left: 0;
-        height: 100%;
+        height: 100vh;
         resize: none;
         z-index:4;
         }
@@ -103,6 +134,5 @@
         padding: 0;
         margin: 0;
         border: 0px;
-        box-sizing: border-box;
     }
 }
