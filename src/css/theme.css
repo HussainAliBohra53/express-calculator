@@ -51,16 +51,21 @@ transform:translateX(20px);
     margin-top: 5px;
     padding: 0px;
     border: 0px;
+    float:right;
+    margin-right: 5px;
     background-color: orange;
 }
-.new-var{
+.calpad-new-var{
+    background-color: #6495ED;
     width:50px;
     height:30px;
-    margin: 0px;
+    margin-bottom: 2px;
     padding: 0px;
     border: 0px;
-    background-image: linear-gradient(45deg,rgb(61, 92, 230),rgb(19, 41, 236));
+    float:right;
+    margin-right: 5px;
 }
+
 .large-name{
 display: inline-block;
 overflow: hidden;

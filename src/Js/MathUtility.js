@@ -71,10 +71,9 @@ export function calculateWithScope(expString,scope){
   console.log(scope);
   try{
       let result=math.evaluate(expString,scope);
-      if(!isNaN(result)) return {result:result.toString(),status:'ok',error:''}
-      return {result:result.toString(),status:'img',error:'imaginary value not supported'};
+      if(result===undefined) return {result:'',status:'err',error:'undefined'};
+     return {result:result.toString(),status:'ok',error:''}
   }catch(e){
-   
   return {result:'',status:'err',error:e.message};
   }
   }

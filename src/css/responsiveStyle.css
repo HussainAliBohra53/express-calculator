@@ -42,12 +42,14 @@
     border:2px solid black;
 }
 .main-exp{
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
-.ans{
-    font-size: 2.2vw;
-    font-family: 'Josefin',sans-serif;
-    font-style: oblique;
+.ans-wrapper{
+    font-size: 1vw;
+}
+.ans::before{
+content: 'Ans=';
+padding-right: 4px;
 }
 @media screen and (max-width:768px) {
     .main-exp{

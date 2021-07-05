@@ -138,10 +138,10 @@ return (
                         <li>Click +V to add New Variables. 
                         <br/> e.g.<span className="bg-white mx-2 px-1">length=5</span>,<span className="px-1 bg-white mx-2">height=5</span>, ....<br/></li>
                         <li>Create expression using variables.
-                        <div><span className="bg-light rounded px-2 p-1">e.g. length x heigth x 0.5</span></div></li>
+                        <div>e.g. <span className="rounded px-2 p-1 bg-white">length x heigth x 0.5</span></div></li>
                         <li>click +E to add expression in expression list</li>
                         <li>Give your expression a name</li>
-                        <li><span className="inner-var-name">e.g. area_of_triangle</span></li>
+                        <li>e.g. <span className="bg-white px-1 rounded">area_of_triangle</span></li>
                         <li>Click on the icon <span className="bi bi-calculator"></span> to use this expression into expression</li>
                     </ol>
                 </div>

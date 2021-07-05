@@ -18,6 +18,7 @@ export function CalculatorPad(props){
         context.setExpString(Texpstring);
         let Texpdisstring=MathUtility.arrayToString(arr2);
         context.setExpDisplayString(Texpdisstring);
+        
         if(r.status!=='ok'){
           context.setError(true);
         }else{
@@ -46,7 +47,9 @@ export function CalculatorPad(props){
     context.reset();
     }
     const keypadClickHandler=(event)=>{
+    if(event===undefined)return;
     let key=event.name;
+    if(key===undefined)return;
     if(key==="reset") {reset();return;}
     let arr=[...context.expStack];
     let arr2=[...context.expDisplayStack];
@@ -74,7 +77,7 @@ export function CalculatorPad(props){
     return (
         <div className="cal-pad-border h-100">         
             <div  className="cal-pad-header bg-dark text-center" style={{position:'relative',top:'0px',width:'100%'}}>
-            <span className="px-3"><i style={{color:context.error?'red':'green'}}className="bi bi-lightning-charge-fill" title="Invalid Expression"></i></span>
+            <span className="px-3"><i style={{color:context.error?context.expDisplayString.length>0?'red':'green':'green'}}className="bi bi-lightning-charge-fill" title="Invalid Expression"></i></span>
             <span className=" text-white">Calculator PAD</span>
             </div>
           <div style={{position:'absolute',bottom:'0px'}}>
@@ -92,11 +95,11 @@ export function CalculatorPad(props){
            <hr className="mt-2 mb-2" />
            <div className="row">
             
-            <div className="col-9 mb-2 text-break ans">
+            <div className="col-9 mb-2 text-break ans-wrapper">
              
-            <span style={{alignContent:'baseline'}}>Ans={context.expString.length>0?context.result:'0'}</span>
+            <span className="ans">{context.expString.length>0?context.result:'0'}</span>
            </div>
-           <div className="col-3"><button onClick={props.displayModalgetVarName} className="new-var" style={{float:'left',margin:'0px'}}>+V</button> </div>
+           <div className="col-3"><button onClick={props.displayModalgetVarName} className="calpad-new-var">+V</button> </div>
            </div>
            
          </div>

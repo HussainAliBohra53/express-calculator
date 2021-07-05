@@ -4,12 +4,11 @@
 
 #keypad{
     width:100%;
-    background-image: white;
 }
 
 #oprPad{
     width: 100%;
-    background-image: linear-gradient(45deg,rgb(61, 92, 230),rgb(19, 41, 236));
+    background-color: teal;
 }
 #oprPad td{
     margin: 0px;

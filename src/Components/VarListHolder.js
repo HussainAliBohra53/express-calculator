@@ -64,7 +64,7 @@ return (
         <div className="w-100">
         <div className="float-start px-2 bg-light"><button className="var-list-close no-style-button" onClick={OnHideClick}>X</button>
         </div>
-        <h3 className="text-center">Variables</h3>
+        <h3 className="text-center varbar-header-title">Variables</h3>
         </div>
         <table>
             {vars}
