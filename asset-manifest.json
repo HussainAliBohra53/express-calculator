@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/express-calculator/static/css/main.a831968f.chunk.css",
-    "main.js": "/express-calculator/static/js/main.202f751a.chunk.js",
-    "main.js.map": "/express-calculator/static/js/main.202f751a.chunk.js.map",
-    "runtime-main.js": "/express-calculator/static/js/runtime-main.3c655e2b.js",
-    "runtime-main.js.map": "/express-calculator/static/js/runtime-main.3c655e2b.js.map",
-    "static/js/2.2c33a17a.chunk.js": "/express-calculator/static/js/2.2c33a17a.chunk.js",
-    "static/js/2.2c33a17a.chunk.js.map": "/express-calculator/static/js/2.2c33a17a.chunk.js.map",
-    "static/js/3.3b68caaa.chunk.js": "/express-calculator/static/js/3.3b68caaa.chunk.js",
-    "static/js/3.3b68caaa.chunk.js.map": "/express-calculator/static/js/3.3b68caaa.chunk.js.map",
+    "main.css": "/express-calculator/static/css/main.c91ee6d4.chunk.css",
+    "main.js": "/express-calculator/static/js/main.e58d6aa0.chunk.js",
+    "main.js.map": "/express-calculator/static/js/main.e58d6aa0.chunk.js.map",
+    "runtime-main.js": "/express-calculator/static/js/runtime-main.0cc8cb9a.js",
+    "runtime-main.js.map": "/express-calculator/static/js/runtime-main.0cc8cb9a.js.map",
+    "static/js/2.7cb56195.chunk.js": "/express-calculator/static/js/2.7cb56195.chunk.js",
+    "static/js/2.7cb56195.chunk.js.map": "/express-calculator/static/js/2.7cb56195.chunk.js.map",
+    "static/js/3.7fb76288.chunk.js": "/express-calculator/static/js/3.7fb76288.chunk.js",
+    "static/js/3.7fb76288.chunk.js.map": "/express-calculator/static/js/3.7fb76288.chunk.js.map",
     "index.html": "/express-calculator/index.html",
-    "static/css/main.a831968f.chunk.css.map": "/express-calculator/static/css/main.a831968f.chunk.css.map",
-    "static/js/2.2c33a17a.chunk.js.LICENSE.txt": "/express-calculator/static/js/2.2c33a17a.chunk.js.LICENSE.txt",
+    "static/css/main.c91ee6d4.chunk.css.map": "/express-calculator/static/css/main.c91ee6d4.chunk.css.map",
+    "static/js/2.7cb56195.chunk.js.LICENSE.txt": "/express-calculator/static/js/2.7cb56195.chunk.js.LICENSE.txt",
     "static/media/expnamepopup.3aea5048.PNG": "/express-calculator/static/media/expnamepopup.3aea5048.PNG",
     "static/media/fxinuse.8985da1f.png": "/express-calculator/static/media/fxinuse.8985da1f.png",
     "static/media/home-mobile-expressions.7fa8863b.PNG": "/express-calculator/static/media/home-mobile-expressions.7fa8863b.PNG",
@@ -27,9 +27,9 @@
     "static/media/volofcone.bca19891.PNG": "/express-calculator/static/media/volofcone.bca19891.PNG"
   },
   "entrypoints": [
-    "static/js/runtime-main.3c655e2b.js",
-    "static/js/2.2c33a17a.chunk.js",
-    "static/css/main.a831968f.chunk.css",
-    "static/js/main.202f751a.chunk.js"
+    "static/js/runtime-main.0cc8cb9a.js",
+    "static/js/2.7cb56195.chunk.js",
+    "static/css/main.c91ee6d4.chunk.css",
+    "static/js/main.e58d6aa0.chunk.js"
   ]
 }
