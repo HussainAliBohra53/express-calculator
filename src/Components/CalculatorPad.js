@@ -46,6 +46,7 @@ export function CalculatorPad(props){
     const reset=()=>{
     context.reset();
     }
+
     const keypadClickHandler=(event)=>{
     if(event===undefined)return;
     let key=event.name;
@@ -64,16 +65,20 @@ export function CalculatorPad(props){
       alert("please write expression");
       return;
     }
+
     if(context.error){
       alert("Invalid Expression");
       return;
     }
+
     if(!(context.elemTracker.includes('var')||context.elemTracker.includes('fx'))){
       alert("Expression should have at least one variable value");
       return;
     }
+
     props.OnAddFxClick();
     }
+    
     return (
         <div className="cal-pad-border h-100">         
             <div  className="cal-pad-header bg-dark text-center" style={{position:'relative',top:'0px',width:'100%'}}>

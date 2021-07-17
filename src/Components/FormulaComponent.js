@@ -56,7 +56,7 @@ return (
                 <div title={props.name} className="w-100 large-name fx-name text-capitalize font-combo">{props.name}</div>
             </td>
             <td>
-            <div title={fxData.result} style={{float:'right',width:'100%'}} className="bg-light large-name fx-result">{fxData.result}</div>
+            <div title={fxData.result} style={{float:'right',width:'100%'}} className="bg-light rounded large-name fx-result">{fxData.result}</div>
             </td>
             <td style={{width:'20px',paddingRight:'10px'}}><button title="delete" style={{display:props.parent?'inline-block':'none'}} name={props.name} onClick={props.OnDeleteFx} className="no-style-button bi bi-trash"></button></td>
             </tr>

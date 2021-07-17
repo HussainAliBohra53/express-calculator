@@ -12,7 +12,7 @@ export function validateVarName(varName,varList){
    if(format.test(varName)){
     return {status:false,msg:"special characters are not allowed."};
    }
-   if(varName.length>10) return {status:false,msg:"Variable name length should not more than 10 characters."};
+   if(varName.length>15) return {status:false,msg:"Variable name length should not more than 15 characters."};
    if(varName.indexOf(' ') >= 0){
        return {status:false,msg:"space is not allowed."};
 }
