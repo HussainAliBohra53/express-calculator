@@ -45,7 +45,8 @@
     font-size: 1.5vw;
 }
 .ans-wrapper{
-    font-size: 1vw;
+    font-size: 1.7vw;
+    font-weight:600;
 }
 .ans::before{
 content: 'Ans=';
@@ -110,7 +111,7 @@ padding-right: 4px;
        top: 0;
        right:0;
        background-color: azure;
-       z-index:4;
+       z-index:8;
        height: 100%;
        border: 0px;
     }
@@ -122,7 +123,7 @@ padding-right: 4px;
         left: 0;
         height: 100vh;
         resize: none;
-        z-index:4;
+        z-index:8;
         }
     .var-bar-display{
         display: none;

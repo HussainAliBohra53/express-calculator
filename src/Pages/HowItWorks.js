@@ -17,10 +17,10 @@ import multinestedfx from './../images/howtouse/multilevelnest.png';
 export function HowItWorks(props){
     return(
         <>
-        <div className="container-fluid">
+        <div style={{marginTop:'10vh'}} className="w-100">
             
             <div className="d-flex w-100 justify-content-center">
-           <div className="htu-body w-75 rounded shadow px-1 font-poppins" style={{fontSize:'large'}}>
+           <div className="htu-body rounded shadow px-1 font-poppins" style={{fontSize:'large'}}>
            <div className="htu-title-wrapper">
                 <h1 className="h1 text-center">How To Use</h1>
             </div>

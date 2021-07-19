@@ -3,9 +3,9 @@ import hussainprofile from './../images/developer/hussain_profile.jpg';
 
 export function Developer(){
     return(
-        <div className="developer-bg">
+        <div style={{marginTop:'10vh'}}>
        <div>
-        <div className="rounded m-2 px-2 font-poppins">
+        <div className="rounded px-2 font-poppins">
             <div>
           
            <div className="p-2 rounded text-center text-break">
@@ -13,7 +13,7 @@ export function Developer(){
            <span>Hey There,</span><br/>
                     <span>Welcome to the Express-Calculator.</span>
                     </h1>
-           <div className="row container-fluid">
+           <div className="row">
                <div className="col-sm-4">
                    <div className="rounded">
                     <figure className="figure">

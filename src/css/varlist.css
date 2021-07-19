@@ -1,12 +1,13 @@
 .varlist-var-name{
     font-family: 'Mulish',sans-serif;
-    color:black;
+    color:#6495ED;
     font-weight: bold;
     font-size: 2.5vh;
 }
 .varbar-header-title{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #6495ED;   
+    font-weight: 350;
+    color: #6495ED;  
+     
 }
 .var-list-table>tr{
     height: 3vh;
