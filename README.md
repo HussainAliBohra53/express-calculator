@@ -9,14 +9,14 @@ Express Calculator is an online mathematical utility tool that features a scient
 
 # Technologies Used
 
-React.js
-Math.js
-JavaScript
-TypeScript
-HTML5 LocalStorage API
-HTML
-CSS
-Bootstrap
+### React.js
+### Math.js
+### JavaScript
+### TypeScript
+### HTML5 LocalStorage API
+### HTML
+### CSS
+### Bootstrap
 
 # Start with repository 
 
