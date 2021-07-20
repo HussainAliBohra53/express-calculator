@@ -5,7 +5,7 @@ Express Calculator is an online mathematical utility tool that features a scient
 [https://hussainalibohra53.github.io/express-calculator/](Express-Calculator)
 
 # How To Use
-[https://hussainalibohra53.github.io/how-to-use/](How To Use)
+[https://hussainalibohra53.github.io/how-to-use](How-To-Use)
 
 # Technologies Used
 
