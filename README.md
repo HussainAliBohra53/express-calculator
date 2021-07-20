@@ -1,10 +1,24 @@
-# Getting Started with Create React App
+# Express-Calculator
+Express Calculator is an online mathematical utility tool that features a scientific calculator, tools to save your calculated results in variables that can be used in later calculations and you can create your own equations or say expressions using these variables. An expression can be used with another expression and also could be nested into another expression.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# URL
+[https://hussainalibohra53.github.io/express-calculator/](Express-Calculator)
 
-## Available Scripts
+# How To Use
+[https://hussainalibohra53.github.io/how-to-use](How To Use)
 
-In the project directory, you can run:
+# Technologies Used
+
+React.js
+Math.js
+JavaScript
+TypeScript
+HTML5 LocalStorage API
+HTML
+CSS
+Bootstrap
+
+# Start with repository 
 
 ### `npm start`
 
