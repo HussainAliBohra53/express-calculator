@@ -2,7 +2,7 @@
 Express Calculator is an online mathematical utility tool that features a scientific calculator, tools to save your calculated results in variables that can be used in later calculations and you can create your own equations or say expressions using these variables. An expression can be used with another expression and also could be nested into another expression.
 
 # URL
-[https://hussainalibohra53.github.io/express-calculator]Express-Calculator)
+[https://hussainalibohra53.github.io/express-calculator](Express-Calculator)
 
 # How To Use
 [https://hussainalibohra53.github.io/how-to-use](How-To-Use)
