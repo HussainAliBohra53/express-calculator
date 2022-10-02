@@ -1,6 +1,5 @@
 import './../css/theme.css';
 import hussainprofile from './../images/developer/hussain_profile.jpg';
-
 export function Developer(){
     return(
         <div style={{marginTop:'10vh'}}>

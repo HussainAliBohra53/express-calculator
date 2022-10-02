@@ -1,14 +1,27 @@
-import React,{useContext} from 'react';
-import ReactHtmlParser from 'react-html-parser';
+import React,{useContext,useEffect} from 'react';
 import * as VarUtility from '../Js/VarUtility';
+import ReactHtmlParser from 'react-html-parser';
 import KeyPadComponent from './KeyPad';
 import { ExpContext } from './MainContext';
 import * as MathUtility from '../Js/MathUtility';
 import * as KeypadUtility from '../Js/KeyPadUtility';
 import './../css/responsiveStyle.css';
 import './../css/theme.css';
+
 export function CalculatorPad(props){
     let context=useContext(ExpContext);
+    const keydown = function(event){
+      console.log(`Key: ${event.key} as been pressed from ${event.srcElement.tagName}`);
+        const validKeys=['1','2','3','4','5','6','7','8','9','0','.','Backspace','^','!','+','-','*','/','%','(',')','s','S','c','C','t','T','r','l','L','p'];
+        if(validKeys.includes(event.key)&&event.srcElement.tagName!=='INPUT'){
+        event.name=event.key;
+        keypadClickHandler(event);
+        } 
+    }
+    useEffect(() => {
+      document.addEventListener('keydown',keydown);
+      return () => document.removeEventListener("keydown",keydown);
+    });
     const setResult=(arr1,arr2)=>{
         context.updateExpStack(arr1);
         context.updateExpDisplayStack(arr2);
@@ -72,7 +85,7 @@ export function CalculatorPad(props){
     }
 
     if(!(context.elemTracker.includes('var')||context.elemTracker.includes('fx'))){
-      alert("Expression should have at least one variable value");
+      alert("Invalid Expression");
       return;
     }
 
@@ -86,16 +99,17 @@ export function CalculatorPad(props){
             <span className=" text-white">Calculator PAD</span>
             </div>
           <div style={{position:'absolute',bottom:'0px'}}>
-         <div className="container-fluid" >
-           
+         <div className="container-fluid">
+           <div className="">
              <div className="row">
-             
             <div className="col-9">
-            <div className="exp-wrapper">
+            <div className="exp-wrapper overflow-scroll">
             <span className="text-break main-exp" style={{letterSpacing:'1px',overflowX:'scroll'}}>{ReactHtmlParser(context.expDisplayString)}</span>
             </div>
            </div>
            <div className="col-3"><button className="new-exp" onClick={ValidateNewFx}>+E</button> </div>
+          
+           </div>
            </div>
            <hr className="mt-2 mb-2" />
            <div className="row">
@@ -112,5 +126,4 @@ export function CalculatorPad(props){
          </div>
         <div className="bottom-bar"></div>
         </div>
-    )
-}
+    )  }

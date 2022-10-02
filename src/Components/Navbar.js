@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import {Link } from 'react-router-dom';
 import './../css/navbar.css';
+import { HeadingName } from '../Pages/Home';
 export function Navbar(props){
     const[isMenuHidded,setMenuHidden]=useState(true);
     const switchMenuHiden=(event)=>{
@@ -10,11 +11,12 @@ export function Navbar(props){
     return(
         <>
         <div className={isMenuHidded?'topnav':'topnav responsive'}>
+                <Link to="/home">Home</Link>
                 <Link to="/">Express Calculator</Link>
                 <Link to="/how-to-use">How to Use</Link>
                 <Link to="/developer">Developer</Link>
                 <Link className="icon" onClick={switchMenuHiden}>
-                    <i className="bi bi-list"></i>
+                <i className="bi bi-list"></i>
                 </Link>
         </div>
         </>

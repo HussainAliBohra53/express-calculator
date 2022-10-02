@@ -58,10 +58,9 @@ function KeyPadComponent(props){
                             <td>
                             <button className="no-style-button" name={isInv?'asin':'sin'} onClick={e => props.onClick(e.target)}>{isInv?ReactHtmlParser('sin<sup>-1</sup>'):'sin'}</button>
 
-                                 
+ 
                             </td>
                             <td>
-                               
                                 <button className="no-style-button" name={isInv?'acos':'cos'} onClick={e => props.onClick(e.target)}>{isInv?ReactHtmlParser('cos<sup>-1</sup>'):'cos'}</button>
                                  
                             </td>
@@ -124,7 +123,7 @@ function KeyPadComponent(props){
                             </td>
 
                             <td style={{borderLeft:'1px solid white'}}>
-                            <button className="no-style-button bi bi-backspace" name="CE" onClick={e => props.onClick(e.target)} />
+                            <button className="no-style-button bi bi-backspace" name="Backspace" onClick={e => props.onClick(e.target)} />
                             </td>
                         </tr>
                         <tr>

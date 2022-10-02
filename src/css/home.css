@@ -1,0 +1,155 @@
+@keyframes express {
+    0% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: 50px;
+    }
+
+    100% {
+        margin-left: 0px;
+    }
+}
+@keyframes caption {
+    0% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-right: 180px;
+    }
+
+    100% {
+        margin-left: 0px;
+    }
+}
+@keyframes lightninghover {
+    0% {
+      
+    }
+    100% {
+        font-size: 25px;
+    }
+}
+:root {
+    --gray: #808080;
+    --gray-medium: #c1bfbf;
+    --gray-light: #d3d3d3;
+    --paper-color: #eff8fe;
+  }
+.mobile-size-box{
+    max-width: 600px;
+}
+.express {
+        background: linear-gradient(#EC9F05,#ff4e00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+.calculator {
+        background: linear-gradient(#009ffd,#2a2a72);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+.caption{
+    display: block;
+}
+.heading-name-wrapper:hover{
+    animation: express 4s;
+}
+.heading-name-wrapper:hover .caption{
+animation: caption 4s;
+}
+
+.heading-name-wrapper {
+    font-family: Arial;
+    width: 100%;
+}
+
+.metallic-grey{
+    background: linear-gradient(
+        135deg,
+        var(--paper-color),
+        85%,
+        var(--gray-light)
+      );
+      box-shadow: 1px 0 1px var(--gray);
+}
+.link-excal {
+    display: inline;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 2px solid black;
+    color:blue;
+}
+
+.link-excal>a {
+    color: black;
+    text-decoration: none;
+}
+
+.strip {
+    display: inline-block;
+    padding: 2px;
+    font-size: 5em;
+    padding-left: 4px;
+    padding-right: 8px;
+    background-color: yellow;
+    animation: openclose infinite ease-in-out;
+}
+.animate-charcter
+{
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.lightning{
+    color:orange;
+}
+.lightning:hover{
+    transform: rotate('180deg');
+}
+h1.test1 {
+    font-family: Georgia, sans-serif;
+    font-size: 5em;
+    letter-spacing: -2px;
+  }
+  
+  h1.test2 {
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 5em;
+    letter-spacing: -2px;
+    border-bottom: 2px solid black;
+    text-transform: uppercase;
+   }
+  
+   h1.test3 {
+    font-family: "Arial Black", sans-serif;
+    font-size: 4.5em;
+    letter-spacing: -1px;
+    background-color: black;
+    color: white;
+   }
+   .features p{
+       text-align: justify;
+   }

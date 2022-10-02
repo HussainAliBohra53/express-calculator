@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.css'
 import {AppV2} from './App';
 import {ExpProvider} from './Components/MainContext';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter,Switch,
   Route,
   Link } from 'react-router-dom';
-import { Contact } from './Components/Contact';
 import { HowItWorks } from './Pages/HowItWorks';
 import {Developer} from './Pages/Developer';
 import { Navbar } from './Components/Navbar';
-
+import {Home} from './Pages/Home'; 
 var screenSize=1400;
 var isMobile=false;
 
@@ -22,11 +22,12 @@ if(screenSize<=768){
 
 ReactDOM.render(
   <>
-<BrowserRouter>
+<BrowserRouter basename='/express-calculator'>
 <Navbar isMobile={isMobile}/>
-            <Switch>
-          <Route path="/contact">
-            <Contact/>
+          <Switch>
+          
+          <Route path="/home">
+          <Home/>
           </Route>
           <Route path="/how-to-use">
            <HowItWorks />
@@ -37,9 +38,9 @@ ReactDOM.render(
           <Route path="/">
           <ExpProvider><AppV2 isMobile={isMobile} /></ExpProvider>
           </Route>
+        
         </Switch>
         </BrowserRouter>
-    
     </>
   ,
   document.getElementById('root')

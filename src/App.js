@@ -10,6 +10,7 @@ import * as FxUtility from './Js/FormulaUtility';
 import './css/theme.css';
 import './css/responsiveStyle.css';
 import { FxClass } from './Js/FormulaClass';
+import './Js/KeypadEventBind';
 export function AppV2(props){
   
     const context=useContext(ExpContext);
