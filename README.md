@@ -1,22 +1,50 @@
 # Express-Calculator
 Express Calculator is an online mathematical utility tool that features a scientific calculator, tools to save your calculated results in variables that can be used in later calculations and you can create your own equations or say expressions using these variables. An expression can be used with another expression and also could be nested into another expression.
 
-# URL
+**URL**
 [Express-Calculator](https://hussainalibohra53.github.io/express-calculator/)
 
-# How To Use
-[How-To-Use](https://hussainalibohra53.github.io/how-to-use)
 
-# Technologies Used
+### Features :
+***1) Expression Builder:***  
+Express calculator helps you to construct your expression by inserting variables, numbers, and mathematical operators.
+You can also nest an expression inside another. Nesting of expression helps you to make big and complex expressions from small and simple expressions. 
 
-### React.js
-### Math.js
-### JavaScript
-### TypeScript
-### HTML5 LocalStorage API
-### HTML
-### CSS
-### Bootstrap
+***2) Declare Variables :***  
+Variables are alphabets that represent a value. In the express calculator, you can easily create a variable and use it wherever you want to use it's value. Change the value of a variable and it will change the value wherever it's being used immediately. 
+
+***3) Calculates on change***  
+No need to hit enter or to press '=' after every change. Whether you are changing the value of variables or expressions or just numbers on the calculator pad, Express calculator recalculates, and update everything after every change.
+
+***4) Easy to use UI***  
+UI is divided into three sections: calculator, variable bar and expression bar make things very clear, simple, and easy to use. Expression bar shows expressions in collapse mode and you can expand or collapse every layer at your convenience. Also, UI is responsive and works awesome on mobile devices too. 
+
+***5) Storing Locally***  
+Express calculator uses HTML storage API to store the data in the browser's memory. It store the data after every change automatically so no need to worry on tab closed accidentally. 
+
+# Technical details
+
+Express calculator is a complete client-side application built using React.js and javascript. It uses math.js to solve maths expressions. Following is the tech stack used to build this application :
+
+### Programming Language
+**Java Script**  
+**Type Script**  
+
+### Framework Used
+**React.js**  
+**Node.js**  
+**Bootstrap**  
+
+### Libraries Uses
+**Math.js**  
+**React-html-parser**  
+**gh-pages**  
+
+### Other tech stack
+**HTML5 Local storage API** 
+**JSON**  
+**HTML**  
+**CSS**  
 
 # Start with repository 
 
