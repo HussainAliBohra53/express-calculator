@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/express-calculator/static/css/main.c053d7c3.css",
-    "main.js": "/express-calculator/static/js/main.e50ce1f5.js",
+    "main.css": "/express-calculator/static/css/main.b064b21a.css",
+    "main.js": "/express-calculator/static/js/main.395db314.js",
     "static/js/787.73471482.chunk.js": "/express-calculator/static/js/787.73471482.chunk.js",
     "static/media/hussain_profile.jpg": "/express-calculator/static/media/hussain_profile.315c9bcb758fe8264346.jpg",
     "static/media/multilevelnest.png": "/express-calculator/static/media/multilevelnest.7845b7ba82a4aa31a45b.png",
@@ -17,12 +17,12 @@
     "static/media/home-page-on-start-mobile.PNG": "/express-calculator/static/media/home-page-on-start-mobile.b7e91829e0bc5dfad669.PNG",
     "static/media/home-mobile-varbar.PNG": "/express-calculator/static/media/home-mobile-varbar.5d3f0a7add99c1f72ee4.PNG",
     "index.html": "/express-calculator/index.html",
-    "main.c053d7c3.css.map": "/express-calculator/static/css/main.c053d7c3.css.map",
-    "main.e50ce1f5.js.map": "/express-calculator/static/js/main.e50ce1f5.js.map",
+    "main.b064b21a.css.map": "/express-calculator/static/css/main.b064b21a.css.map",
+    "main.395db314.js.map": "/express-calculator/static/js/main.395db314.js.map",
     "787.73471482.chunk.js.map": "/express-calculator/static/js/787.73471482.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c053d7c3.css",
-    "static/js/main.e50ce1f5.js"
+    "static/css/main.b064b21a.css",
+    "static/js/main.395db314.js"
   ]
 }
