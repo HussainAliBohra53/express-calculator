@@ -7,10 +7,11 @@ import {ExpProvider} from './Components/MainContext';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter,Switch,
   Route,
-  Link } from 'react-router-dom';
+  Link, 
+  HashRouter} from 'react-router-dom';
 import { HowItWorks } from './Pages/HowItWorks';
 import {Developer} from './Pages/Developer';
-import { Navbar } from './Components/Navbar';
+import Menu, { Navbar } from './Components/Navbar';
 import {Home} from './Pages/Home'; 
 var screenSize=1400;
 var isMobile=false;
@@ -22,10 +23,10 @@ if(screenSize<=768){
 
 ReactDOM.render(
   <>
-<BrowserRouter basename='/express-calculator'>
-<Navbar isMobile={isMobile}/>
+<HashRouter>
+<Menu/>
           <Switch>
-          
+
           <Route path="/home">
           <Home/>
           </Route>
@@ -40,7 +41,7 @@ ReactDOM.render(
           </Route>
         
         </Switch>
-        </BrowserRouter>
+        </HashRouter>
     </>
   ,
   document.getElementById('root')

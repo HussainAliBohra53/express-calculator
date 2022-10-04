@@ -1,14 +1,4 @@
-.varlist-var-name{
-    font-family: 'Mulish',sans-serif;
-    color:#6495ED;
-    font-weight: bold;
-    font-size: 2.5vh;
-}
-.varbar-header-title{
-    font-weight: 350;
-    color: #6495ED;  
-     
-}
+
 .var-list-table>tr{
     height: 3vh;
     min-height: 50px;
@@ -24,5 +14,12 @@
     justify-content: space-around;
     width: 100%;
     height: 80%;
-    background-color: whitesmoke;
+    background-color: lightblue;
+}
+.var-list-header{
+background-color: cadetblue;
+}
+.var-list-table>tr{
+border-bottom: 1px solid black;
+color:blue;
 }

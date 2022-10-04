@@ -124,7 +124,7 @@ export function AppV2(props){
       
       
     return(
-        <div style={{marginTop:'10vh'}}>
+        <div>
           <PopupFrame heading="Enter the variable name" display={displayVarModal} closeModal={closeModal}>
             <ModelGetVarName OnSave={AddNewVar}/>
           </PopupFrame>

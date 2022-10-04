@@ -1,7 +1,7 @@
 {
   "name": "express-calculator",
-  "homepage": "https://HussainAliBohra53.github.io/home",
-  "version": "0.1.0",
+  "homepage": "https://HussainAliBohra53.github.io/express-calculator",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -13,7 +13,6 @@
     "mathjs": "^9.4.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-html-parser": "^2.0.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.1",
     "web-vitals": "^1.1.2"

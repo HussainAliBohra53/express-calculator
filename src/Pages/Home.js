@@ -28,6 +28,9 @@ export function QuickLinks(){
         <div>
             <ul className='list-unstyled'>
             <li>
+                <Link to='/express-calculator'>Express-calculator</Link>
+            </li>
+            <li>
                 <Link to="/how-to-use">Docs</Link>
             </li>
             <li>

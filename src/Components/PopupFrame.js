@@ -6,14 +6,14 @@ import './../css/theme.css';
 export function PopupFrame(props){
 
     return (
-        <div class="modal" tabindex="-1" style={{display:props.display?'block':'none'}}>
-        <div class="modal-dialog" style={{top:'20%',width:'fit-content'}} >
-          <div class="modal-content">
-            <div class="modal-header p-2">
-              <h5 class="modal-title">{props.heading}</h5>
-              <button type="button" onClick={props.closeModal} class="btn-close text-white"></button>
+        <div className="modal" tabIndex="-1" style={{display:props.display?'block':'none'}}>
+        <div className="modal-dialog" style={{top:'20%',width:'fit-content'}} >
+          <div className="modal-content">
+            <div className="modal-header p-2">
+              <h5 className="modal-title">{props.heading}</h5>
+              <button type="button" onClick={props.closeModal} className="btn-close text-white"></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               {props.children}
             </div>
           </div>

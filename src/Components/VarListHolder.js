@@ -9,7 +9,7 @@ export function VarHolder(props){
     return(
        <table style={{width:'100%',tableLayout:'fixed'}}>
            <tr>
-               <td><span title={props.name} class="varlist-var-name large-name">{props.name}</span></td>
+               <td><span title={props.name} className="varlist-var-name large-name">{props.name}</span></td>
                
                <td><input className="input w-100" name={props.name} value={props.value} onChange={props.valueChange}/></td>
            </tr>
@@ -64,9 +64,11 @@ return (
         <div className="w-100">
         <div className="float-start px-2 bg-light"><button className="var-list-close no-style-button" onClick={OnHideClick}>X</button>
         </div>
+        <div className='varlist-header'>
         <h3 className="text-center varbar-header-title">Variables</h3>
         </div>
-        <table>
+        </div>
+        <table className='var-list-table'>
             {vars}
         </table>
         <div style={{display:total<1?'block':'none'}} className="h-100">

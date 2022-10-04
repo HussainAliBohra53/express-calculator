@@ -103,7 +103,7 @@ export function CalculatorPad(props){
            <div className="">
              <div className="row">
             <div className="col-9">
-            <div className="exp-wrapper overflow-scroll">
+            <div className="exp-wrapper">
             <span className="text-break main-exp" style={{letterSpacing:'1px',overflowX:'scroll'}}>{ReactHtmlParser(context.expDisplayString)}</span>
             </div>
            </div>
