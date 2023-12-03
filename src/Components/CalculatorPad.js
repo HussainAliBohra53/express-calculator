@@ -93,7 +93,7 @@ export function CalculatorPad(props){
     }
     
     return (
-        <div className="cal-pad-border h-100">         
+        <div className="cal-pad-border h-94">         
             <div  className="cal-pad-header bg-dark text-center" style={{position:'relative',top:'0px',width:'100%'}}>
             <span className="px-3"><i style={{color:context.error?context.expDisplayString.length>0?'red':'green':'green'}}className="bi bi-lightning-charge-fill" title="Invalid Expression"></i></span>
             <span className=" text-white">Calculator PAD</span>
